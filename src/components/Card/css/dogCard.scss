@@ -1,0 +1,34 @@
+img{
+  object-fit: cover;
+}
+
+.button-link{
+  color: #fff;
+  text-decoration: none;
+}
+
+.card {
+  margin-left: 24px;
+}
+
+.icon-left{
+  color: green;
+  flex: 1 auto;
+  order: 1;
+}
+
+.icon-right{
+  color: red;
+  flex: 1 auto;
+  order: 3;
+}
+
+.vote-count{
+  flex: 3 0px;
+  order: 2;
+  text-align: center;
+}
+
+.wrapper{
+  display: flex;
+}

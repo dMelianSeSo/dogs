@@ -2,13 +2,13 @@ import React, { } from 'react';
 import { Badge } from 'react-bootstrap';
 import { Link } from 'wouter';
 
-const DogInfo = ({ dog }) => {
-  const breeds = dog ? dog.breeds : {};
-  const id = dog ? dog.id : '';
-  const lifeSpan = breeds[0] ? breeds[0].life_span : '';
-  const bredFor = breeds[0] ? breeds[0].bred_for : '';
-  const breedGroup = breeds[0] ? breeds[0].breed_group : '';
+const DogInfo = ({ dog = {} }) => {
+  const { breeds = [] } = dog;
+  const { id = '' } = dog;
+  const { bred_for: bredFor = '' } = breeds[0] || '';
+  const { breed_group: breedGroup = '' } = breeds[0] || '';
   const height = breeds[0] ? breeds[0].height.metric : '';
+  const { life_span: lifeSpan = '' } = breeds[0] || '';
   const temperament = breeds[0] ? breeds[0].temperament.replace(/,/g, '').split(' ') : '';
   const weight = breeds[0] ? breeds[0].weight.metric : '';
 

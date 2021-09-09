@@ -12,12 +12,12 @@ const DogFetch = (dogNumber = 4) => {
         .then((res) => res.json())
         .then(
           (result) => {
-            setLoading(false);
             resultDogs.push(result[0]);
           },
         );
     }
 
+    setLoading(false);
     setDogs(resultDogs);
   };
 

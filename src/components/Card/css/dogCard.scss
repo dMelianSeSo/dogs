@@ -2,25 +2,26 @@ img{
   object-fit: cover;
 }
 
-.button-link{
-  color: #fff;
-  text-decoration: none;
-}
-
 .card {
   margin-left: 24px;
 }
 
 .icon-left{
-  color: green;
+  color: rgb(15, 189, 15);
   flex: 1 auto;
   order: 1;
+  :hover{
+    opacity: 0.5;
+  }
 }
 
 .icon-right{
-  color: red;
+  color: grey;
   flex: 1 auto;
   order: 3;
+  :hover{
+    opacity: 0.5;
+  }
 }
 
 .vote-count{

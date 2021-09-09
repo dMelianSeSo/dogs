@@ -1,3 +1,7 @@
+.App {
+  min-height: calc(100vh - 37px);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

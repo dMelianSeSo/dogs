@@ -10,13 +10,7 @@ const voteSubmitter = async (imageId, voteValue) => {
       image_id: imageId,
       value: voteValue,
     }),
-  })
-    .then((res) => res.json())
-    .then(
-      (result) => {
-        console.log({ result, imageId });
-      },
-    );
+  });
 };
 
 export default voteSubmitter;

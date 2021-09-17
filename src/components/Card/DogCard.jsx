@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './css/dogCard.scss';
+import Context from '../../context/LoggedUser';
 import DogInfo from '../DogInfo';
 import dogVotes from '../../helpers/dogVotes';
+import favoriteSubmitter from '../../helpers/favoriteSubmitter';
 import voteSubmitter from '../../helpers/voteSubmitter';
 
 const DogCard = ({ dog, votes }) => {
   const { breeds } = dog || {};
   const { id, url } = dog || '';
+  const { isLogged, user } = useContext(Context);
   const name = breeds[0] ? breeds[0].name : '';
 
   const [currentDogVotes, setCurrentDogVotes] = useState(dogVotes(id, votes));
@@ -49,6 +52,16 @@ const DogCard = ({ dog, votes }) => {
             }}
             size="lg"
           />
+          {isLogged && (
+          <FontAwesomeIcon
+            className="star"
+            icon={faStar}
+            onClick={() => {
+              favoriteSubmitter(id, user);
+            }}
+            size="lg"
+          />
+          )}
         </div>
         <br />
         <Button onClick={() => setShowDogInfo(!showDogInfo)} style={{ display: 'flex', margin: '0 auto' }}>

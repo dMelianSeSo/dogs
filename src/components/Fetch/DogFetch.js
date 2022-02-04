@@ -23,8 +23,6 @@ const DogFetch = (dogNumber = 4) => {
     fetchDogs();
   }, []);
 
-  console.log(dogs);
-
   return { dogs, loading };
 };
 

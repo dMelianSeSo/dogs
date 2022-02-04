@@ -26,7 +26,13 @@ type Dog = {
   width: number;
 };
 
-const DogCard = ({ dog, votes }: { dog: Dog; votes: any }) => {
+const DogCard = ({
+  dog,
+  votes,
+}: {
+  dog: Dog;
+  votes: { image_id: string }[];
+}): JSX.Element => {
   const { breeds } = dog || [];
   const { id, url } = dog || "";
   const { isLogged, user } = useContext(Context);

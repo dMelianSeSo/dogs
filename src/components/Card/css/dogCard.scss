@@ -1,4 +1,4 @@
-img{
+img {
   object-fit: cover;
 }
 
@@ -6,36 +6,36 @@ img{
   margin-left: 24px;
 }
 
-.icon-left{
+.icon-left {
   color: rgb(15, 189, 15);
   flex: 1 auto;
   order: 1;
-  :hover{
+  :hover {
     opacity: 0.5;
   }
 }
 
-.icon-right{
+.icon-right {
   color: grey;
   flex: 1 auto;
   order: 3;
-  :hover{
+  :hover {
     opacity: 0.5;
   }
 }
 
-.star{
+.star {
   color: yellow;
   stroke: black;
   stroke-width: 10;
 }
 
-.vote-count{
+.vote-count {
   flex: 3 0px;
   order: 2;
   text-align: center;
 }
 
-.wrapper{
+.wrapper {
   display: flex;
 }

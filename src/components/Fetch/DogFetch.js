@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const DogFetch = (dogNumber = 4) => {
   const [dogs, setDogs] = useState([]);
@@ -10,11 +10,9 @@ const DogFetch = (dogNumber = 4) => {
     for (let i = 0; i < dogNumber; i += 1) {
       await fetch(`https://api.thedogapi.com/v1/images/search?${apiKey}`)
         .then((res) => res.json())
-        .then(
-          (result) => {
-            resultDogs.push(result[0]);
-          },
-        );
+        .then((result) => {
+          resultDogs.push(result[0]);
+        });
     }
 
     setLoading(false);
@@ -24,6 +22,8 @@ const DogFetch = (dogNumber = 4) => {
   useEffect(() => {
     fetchDogs();
   }, []);
+
+  console.log(dogs);
 
   return { dogs, loading };
 };

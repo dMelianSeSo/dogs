@@ -9,7 +9,7 @@ import DogCard from "../components/Card/DogCard";
 import DogFetch from "../components/Fetch/DogFetch";
 import favoriteGetter from "../helpers/favoriteGetter.ts";
 import Login from "./Login";
-import voteGetter from "../helpers/voteGetter";
+import voteGetter from "../helpers/voteGetter.ts";
 
 const Home = () => {
   const { dogs, loading } = DogFetch(8);
@@ -35,7 +35,7 @@ const Home = () => {
           <Row className="mt-2">
             {!loading && <h1>Favorites of {user}</h1>}
             {favorites.length > 0 &&
-              favorites[0].map((favorite) => (
+              favorites.map((favorite) => (
                 <Card
                   key={favorite.id}
                   style={{ width: "18rem", paddingLeft: 0, paddingRight: 0 }}
